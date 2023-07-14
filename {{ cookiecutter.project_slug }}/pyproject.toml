@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "{{ cookiecutter.project_name }}"
+version = "0.1.0"
+description = ""
+authors = ["{{ cookiecutter.author }}"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^{{ cookiecutter.python_version }}"
+torch = {version = "^2.0.1+cu118", source = "pytorch-gpu-src"}
+torchvision = {version = "^0.15.2+cu118", source = "pytorch-gpu-src"}
+torchaudio = {version = "^2.0.2+cu118", source = "pytorch-gpu-src"}
+jupyterlab = "^4.0.3"
+xgboost = "^1.7.6"
+catboost = "^1.2"
+scikit-learn = "^1.3.0"
+lightgbm = "^4.0.0"
+
+[[tool.poetry.source]]
+name = "pytorch-gpu-src"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "explicit"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.278"
+black = {extras = ["jupyter"], version = "^23.7.0"}
+isort = "^5.12.0"
+jupyterlab-code-formatter = "^2.2.1"
+numpy = "^1.21.0"
+pandas = "^1.5.3"
+tqdm = "^4.48.2"
+beartype = "^0.14.1"
+scipy = "^1.9"
+
+[tool.ruff]
+include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
