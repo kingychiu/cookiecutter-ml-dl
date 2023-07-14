@@ -21,7 +21,7 @@
 
 3 Create a new project with this template:
 
-```cookiecutter https://github.com/openpolis/django-project-template.git```
+```cookiecutter https://github.com/kingychiu/cookiecutter-ml-dl.git```
 
 4 Dependency Setup
 
