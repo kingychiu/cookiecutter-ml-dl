@@ -1,7 +1,8 @@
 dependency:
-	poetry env use {{ cookiecutter.python_version }}
+	pyenv install {{ cookiecutter.python_version }} -s
+	pyenv local {{ cookiecutter.python_version }}
 	poetry run python -m pip install --upgrade pip
-	poetry install
+	poetry install --no-root
 
 python-shell:
 	poetry run python
@@ -11,5 +12,5 @@ jupyter-lab:
 
 lint:
 	# Support jupyter notebook as well
-	poetry run ruff .
+	poetry run isort .
 	poetry run black .

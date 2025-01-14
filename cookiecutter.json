@@ -2,5 +2,5 @@
   "project_name": "My Machine Learning Project",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
   "author": "Anonymous",
-  "python_version": "3.10"
+  "python_version": "3.10.12"
 }
